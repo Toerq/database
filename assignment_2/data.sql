@@ -17,3 +17,23 @@ FROM JohnsonBrothers.items_at_department
 INSERT INTO `department_item` (`item`, `department`, `qoh`, `item_name`, `item_price`, `floor`) 
 SELECT distinct item, department, qoh, item_name, item_price, floor
 FROM JohnsonBrothers.items_at_department
+
+/* Task #7, increase salary */
+UPDATE employee, department
+SET salary = salary + 10000
+WHERE department_manager = employee.number;
+
+
+/*
+UPDATE [LOW_PRIORITY] [IGNORE] table_reference
+    SET col_name1={expr1|DEFAULT} [, col_name2={expr2|DEFAULT}] ...
+    [WHERE where_condition]
+    [ORDER BY ...]
+    [LIMIT row_count]
+
+Multiple-table syntax:
+
+UPDATE [LOW_PRIORITY] [IGNORE] table_references
+    SET col_name1={expr1|DEFAULT} [, col_name2={expr2|DEFAULT}] ...
+    [WHERE where_condition]
+*/
