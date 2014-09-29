@@ -3,7 +3,7 @@ SELECT number, name, salary, manager, birthyear, startyear
 FROM JohnsonBrothers.employee
 
 INSERT INTO `sale`(`transaction_id`, `sale_date`, `employee`, `account_number`)
-SELECT transaction_id, sale_date, employee, account_number
+SELECT distinct transaction_id, sale_date, employee, account_number
 FROM JohnsonBrothers.sale
 
 INSERT INTO `item`(`transaction_id`, `item`, `quantity)
