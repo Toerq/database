@@ -45,5 +45,5 @@ CREATE TABLE IF NOT EXISTS `department_item` (
   `item_name` varchar(20) DEFAULT NULL,
   `item_price` int(11) DEFAULT NULL,
   `floor` int(11) DEFAULT NULL,
-  PRIMARY KEY (`item`)
+  PRIMARY KEY (`item`, `department`)
 );
