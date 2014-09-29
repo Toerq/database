@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `department` (
   `department` int(11) NOT NULL,
   `department_name` varchar(20) DEFAULT NULL,
   `department_store` int(11) NOT NULL,
-  `department_manager` int(11) DEFAULT NULL,
+  `department_manager` int(11) NOT NULL,
   `city` varchar(15) NOT NULL,
   PRIMARY KEY (`department`)
 );
@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS `department_item` (
 CREATE TABLE IF NOT EXISTS `manager`(
   `number` int(11) NOT NULL,
   `bonus`int(11) DEFAULT NULL,
-PRIMARY KEY REFERENCES employee (`number`));
+PRIMARY KEY employee (`number`));
 /*
 http://dba.stackexchange.com/questions/36573/how-to-model-inheritance-of-two-tables-mysql
 */
