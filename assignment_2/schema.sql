@@ -50,7 +50,10 @@ CREATE TABLE IF NOT EXISTS `department_item` (
 
 
 /* Task 6 */
-CREATE TABLE IF NOT EXISTS `Manager`(
+CREATE TABLE IF NOT EXISTS `manager`(
   `number` int(11) NOT NULL,
   `bonus`int(11) DEFAULT NULL,
-PRIMARY KEY (`number`));
+PRIMARY KEY REFERENCES employee (`number`));
+/*
+http://dba.stackexchange.com/questions/36573/how-to-model-inheritance-of-two-tables-mysql
+*/
