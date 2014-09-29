@@ -48,6 +48,8 @@ CREATE TABLE IF NOT EXISTS `department_item` (
   PRIMARY KEY (`item`, `department`)
 );
 
+
+/* Task 6 */
 CREATE TABLE IF NOT EXISTS `Manager`(
   `number` int(11) NOT NULL,
   `bonus`int(11) DEFAULT NULL,
