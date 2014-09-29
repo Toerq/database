@@ -18,9 +18,15 @@ INSERT INTO `department_item` (`item`, `department`, `qoh`, `item_name`, `item_p
 SELECT distinct item, department, qoh, item_name, item_price, floor
 FROM JohnsonBrothers.items_at_department
 
+/* Task #6, add managers to manager-entity */
+INSERT INTO `manager` (`number`) 
+SELECT distinct number
+FROM employee, department
+WHERE number = department_manager;
+
 /* Task #7, increase salary */
-UPDATE employee, department
-SET salary = salary + 10000
+UPDATE manager, department, employee
+SET manager.bonus = 10000
 WHERE department_manager = employee.number;
 
 
