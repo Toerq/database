@@ -6,7 +6,7 @@ INSERT INTO `sale`(`transaction_id`, `sale_date`, `employee`, `account_number`) 
 SELECT transaction_id, sale_date, employee, account_number
 FROM JohnsonBrothers.sale
 
-INSERT INTO `sale`(`transaction_id`, `item`, `quantity)
+INSERT INTO `item`(`transaction_id`, `item`, `quantity)
 SELECT transaction_id, item, quantity
 FROM JohnsonBrothers.sale
 
