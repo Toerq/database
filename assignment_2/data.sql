@@ -20,9 +20,10 @@ FROM JohnsonBrothers.items_at_department
 
 /* Task #6, add managers to manager-entity */
 INSERT INTO `manager` (`number`) 
-SELECT distinct number
-FROM employee, department
-WHERE number = department_manager;
+SELECT distinct q.number
+FROM employee q, employee e, department
+WHERE q.number = department_manager
+OR q.number = e.manager;
 
 /* Task #7, increase salary */
 UPDATE manager, department, employee
