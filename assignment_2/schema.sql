@@ -47,3 +47,8 @@ CREATE TABLE IF NOT EXISTS `department_item` (
   `floor` int(11) DEFAULT NULL,
   PRIMARY KEY (`item`, `department`)
 );
+
+CREATE TABLE IF NOT EXISTS `Manager`(
+  `number` int(11) NOT NULL,
+  `bonus`int(11) DEFAULT NULL,
+PRIMARY KEY (`number`));
