@@ -1,19 +1,19 @@
 INSERT INTO `employee` (`number`, `name`, `salary`, `manager`, `birthyear`, `startyear`)
 SELECT number, name, salary, manager, birthyear, startyear
-FROM employee
+FROM JohnsonBrothers.employee
 
 INSERT INTO `sale`(`transaction_id`, `sale_date`, `employee`, `account_number`) VALUES
 SELECT transaction_id, sale_date, employee, account_number
-FROM sale
+FROM JohnsonBrothers.sale
 
 INSERT INTO `sale`(`transaction_id`, `item`, `quantity)
 SELECT transaction_id, item, quantity
-FROM sale
+FROM JohnsonBrothers.sale
 
 INSERT INTO `department` (`department`, `department_name`, `department_store`, `department_manager`, `city`) 
 SELECT department, department_name, department_store, department_manager, city
-FROM items_at_department
+FROM JohnsonBrothers.items_at_department
 
 INSERT INTO `department_item` (`item`, `department`, `qoh`, `item_name`, `item_price`, `floor`) 
 SELECT item, department, qoh, item_name, item_price, floor
-FROM items_at_department
+FROM JohnsonBrothers.items_at_department

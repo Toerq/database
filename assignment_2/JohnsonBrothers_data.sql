@@ -1,5 +1,3 @@
-
-
 INSERT INTO `employee` (`number`, `name`, `salary`, `manager`, `birthyear`, `startyear`) VALUES
 (10, 'Ross, Stanley', 15908, 199, 1927, 1945),
 (11, 'Ross, Stuart', 12067, NULL, 1931, 1932),
