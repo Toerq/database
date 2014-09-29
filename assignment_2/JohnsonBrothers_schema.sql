@@ -1,4 +1,6 @@
-CREATE 
+create database JohnsonBrothers;
+
+use JohnsonBrothers;
 
 CREATE TABLE IF NOT EXISTS `employee` (
   `number` int(11) NOT NULL,
