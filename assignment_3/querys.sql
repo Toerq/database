@@ -45,16 +45,13 @@ f) Count the number of professors for each position.
 SELECT count(pid), Position 
 FROM Professor
 GROUP BY Position;
-	 
-g) For each student, return surname and maximum grade (students with no
-grades do not need to be returned).
 
 
+g) SELECT Student.Name, Student.Surname, max(Exam.Grade) FROM Student, Exam WHERE SID=Exam.Student Group by sid;
 
-h) Like the previous query, but only returning students who passed at least
-two exams.
-
-
+h)
+SELECT Student.Name, Student.Surname, max(Exam.Grade) FROM Student, Exam WHERE SID=Exam.Student Group by sid
+HAVING count(Grade)>1;
 
 i) Extract the surname of all people in the database, using a single query
 and without removing duplicates.
@@ -80,11 +77,13 @@ k) Create a table to store, for each student, the number of exams s/he has
 passed. Then, fill in this table with the correct information (using a
 single SQL insert statement) and query it to show its content.
 
+SELECT sid, count(Grade) FROM Student, Exam WHERE sid = Exam.student Group by sid;
 
 l) Create a view with the number of exams passed by each student, that is,
 the same information requested at task l). Then query the view to show
 its content.
 
+CREATE VIEW Passedexam as SELECT sid, count(Grade) FROM Student, Exam WHERE sid = Exam.student Group by sid;
 
 m) Describe the main differences between the table and the view in the
 two previous tasks.
@@ -97,7 +96,6 @@ and day, and not only the year. To write this query you may check the
 on line documentation of MySQL and look for the required function to
 extract the year from a date).
 
-
 SELECT Distinct Name 
 FROM Course 
 WHERE ID 
@@ -105,4 +103,3 @@ IN
    (SELECT Course 
    FROM Exam 
    WHERE EXTRACT(YEAR FROM Data) = 2012);
-
